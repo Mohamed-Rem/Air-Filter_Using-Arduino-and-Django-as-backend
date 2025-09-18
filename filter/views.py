@@ -10,7 +10,7 @@ def home(request):
     # Construit une réponse
     filters_output = ""
     for f in filters:
-        filters_output += f"ID: {f.filter_id}, Brand: {f.brand},hours_used : {f.hours_used} hours, Status: {f.status}<br>"
+        filters_output += f"ID: {f.filter_id}, Brand: {f.brand}, hours_used : {f.hours_used} hours, Status: {f.status}<br>"
 
     data_output = ""
     for d in data:
