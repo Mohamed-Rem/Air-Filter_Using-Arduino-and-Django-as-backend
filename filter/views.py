@@ -1,5 +1,28 @@
 from django.http import HttpResponse 
-from .models import Filter, SensorData             # importation de modèle Filter et SensorData
+from rest_framework import viewsets
+from .models import Filter, SensorData, Technician, FilterManual
+from .serializers import FilterSerializer, SensorDataSerializer, TechnicianSerializer, FilterManualSerializer
+
+
+# API pour Filter
+class FilterViewSet(viewsets.ModelViewSet):
+    queryset = Filter.objects.all()
+    serializer_class = FilterSerializer
+
+# API pour SensorData
+class SensorDataViewSet(viewsets.ModelViewSet):
+    queryset = SensorData.objects.all()
+    serializer_class = SensorDataSerializer
+
+# API pour Technician
+class TechnicianViewSet(viewsets.ModelViewSet):
+    queryset = Technician.objects.all()
+    serializer_class = TechnicianSerializer
+
+# API pour FilterManual
+class FilterManualViewSet(viewsets.ModelViewSet):
+    queryset = FilterManual.objects.all()
+    serializer_class = FilterManualSerializer
 
 def home(request):  
 
